@@ -1,98 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stamper Collection</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fa;
-      color: #263445;
-    }
-    header {
-      background: #174a79;
-      color: white;
-      padding: 32px 20px;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 8px; }
-    main {
-      max-width: 900px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-    .panel {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 3px 12px #00000012;
-    }
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccd5df;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    .item {
-      padding: 15px 0;
-      border-bottom: 1px solid #e5e9ef;
-    }
-    .item:last-child { border-bottom: 0; }
-    .item strong { display: block; margin-bottom: 5px; }
-    .item span { color: #64748b; }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Stamper Collection – digitální katalog turistických razítek. Stáhněte si aplikaci pro Windows nebo si prohlédněte online ukázku katalogu.">
+<title>Stamper Collection – turistická razítka</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#233447;background:#f3f6fa}*{box-sizing:border-box}body{margin:0}header{background:#174a79;color:white;text-align:center;padding:42px 20px}header h1{font-size:clamp(30px,5vw,46px);margin:0 0 12px}header p{font-size:19px;margin:0}main{max-width:980px;margin:38px auto;padding:0 20px}.panel{background:#fff;border-radius:15px;padding:clamp(22px,4vw,42px);box-shadow:0 4px 18px #00000012;margin-bottom:24px}h2{margin-top:0;color:#174a79}.lead{font-size:18px;line-height:1.65}.button{display:inline-block;background:#174a79;color:white;text-decoration:none;border-radius:9px;padding:16px 23px;font-weight:bold;margin:12px 0}.button:hover,.button:focus{background:#0e355a}.secondary{background:#e8f0f8;color:#174a79}.secondary:hover,.secondary:focus{background:#d6e5f4}.muted{color:#607184;line-height:1.5}footer{text-align:center;padding:20px;color:#64748b}nav{margin-top:18px}nav a{color:white;margin:0 12px}
+</style>
 </head>
 <body>
-  <header>
-    <h1>STAMPER COLLECTION</h1>
-    <p>Digitální katalog turistických razítek</p>
-  </header>
-
-  <main>
-    <div class="panel">
-      <h2>Moje sbírka razítek</h2>
-      <input id="search" type="search"
-             placeholder="Hledat místo nebo stát...">
-      <div id="collection"></div>
-    </div>
-  </main>
-
-  <script>
-    const stamps = [
-      { id: 1, place: "Hrad Loket", country: "Česko" },
-      { id: 2, place: "Jedovnice", country: "Česko" },
-      { id: 3, place: "Budapešť", country: "Maďarsko" }
-    ];
-
-    const collection = document.getElementById("collection");
-    const search = document.getElementById("search");
-
-    function render() {
-      const query = search.value.toLocaleLowerCase("cs");
-      collection.replaceChildren();
-
-      const results = stamps.filter(stamp =>
-        (stamp.place + " " + stamp.country)
-          .toLocaleLowerCase("cs").includes(query)
-      );
-
-      for (const stamp of results) {
-        const item = document.createElement("div");
-        item.className = "item";
-
-        const title = document.createElement("strong");
-        title.textContent = stamp.place;
-
-        const details = document.createElement("span");
-        details.textContent =
-          "ID: " + stamp.id + " | " + stamp.country;
-
-        item.append(title, details);
-        collection.append(item);
-      }
-    }
+<header><h1>STAMPER COLLECTION</h1><p>Digitální katalog turistických razítek</p><nav><a href="index.html">Úvod</a><a href="katalog.html">Online katalog</a></nav></header>
+<main>
+<section class="panel"><h2>Vaše sbírka. Váš Stamper.</h2><p class="lead">Stamper Collection je aplikace pro přehlednou evidenci sbírky turistických razítek. Uspořádejte si svou sbírku a mějte její záznamy na jednom místě.</p><a class="button" href="https://github.com/BedissTheStamper/Stamper-Collection/releases/download/v1.2.0/Stamper_Setup_1.2.0.exe">⬇ Stáhnout Stamper Collection 1.2.0</a><p class="muted">Windows · instalační soubor EXE · přibližně 156 MB</p><p class="muted">Pokud Windows zobrazí bezpečnostní upozornění, ověřte původ souboru. Instalujte pouze soubory, kterým důvěřujete.</p></section>
+<section class="panel"><h2>Online katalog turistických razítek</h2><p class="lead">Prohlédněte si ukázku katalogu a vyzkoušejte hledání podle místa nebo státu. Online verzi budeme postupně rozšiřovat.</p><a class="button secondary" href="katalog.html">Otevřít online katalog →</a><p class="muted">Online katalog nyní obsahuje pouze tři ukázkové záznamy, nikoliv celou sbírku.</p></section>
+</main><footer>Stamper Collection · verze 1.2.0</footer>
+</body></html>
